@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/leejaegil/Documents/gitspace/github/ExpandableTextViewSample/app/build/intermediates/exploded-aar/ExpandableTextViewSample/expandabletextview/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="34f17aaa448565f90457a21a0dffd0dbb08244da">
+        <dex dex="/Users/leejaegil/Documents/gitspace/github/ExpandableTextViewSample/app/build/intermediates/pre-dexed/debug/ExpandableTextViewSample-expandabletextview-unspecified_cbbaafdf9abf9faa1c3d2abac4405d5bf71de0aa.jar" />
+    </item>
+
+</items>
