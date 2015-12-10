@@ -32,9 +32,9 @@ publish {
     userOrg = 'dubulee'
     groupId = 'com.github.dubulee'
     artifactId = 'expandtextview'
-    publishVersion = '0.1.1'
+    publishVersion = '0.1.2'
     desc = 'Android Expandable TextView'
-    website = 'https://github.com/DUBULEE/FileCacheUtil'
+    website = 'https://github.com/DUBULEE/ExpandTextView'
     issueTracker = "${website}/issues"
     repository = "${website}.git"
 }

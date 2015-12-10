@@ -35,11 +35,9 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 
 public class ExpandableTextView extends LinearLayout implements View.OnClickListener {
 
@@ -71,10 +69,6 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
     private int mMaxCollapsedLines;
 
     private int mMarginBetweenTxtAndBottom;
-
-    private Drawable mExpandDrawable;
-
-    private Drawable mCollapseDrawable;
 
     private int mAnimationDuration;
 
@@ -257,16 +251,6 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         mMaxCollapsedLines = typedArray.getInt(R.styleable.ExpandTextView_maxCollapsedLines, MAX_COLLAPSED_LINES);
         mAnimationDuration = typedArray.getInt(R.styleable.ExpandTextView_animDuration, DEFAULT_ANIM_DURATION);
         mAnimAlphaStart = typedArray.getFloat(R.styleable.ExpandTextView_animAlphaStart, DEFAULT_ANIM_ALPHA_START);
-        mExpandDrawable = typedArray.getDrawable(R.styleable.ExpandTextView_expandDrawable);
-        mCollapseDrawable = typedArray.getDrawable(R.styleable.ExpandTextView_collapseDrawable);
-
-        if (mExpandDrawable == null) {
-            mExpandDrawable = getDrawable(getContext(), R.drawable.ic_expand_small_holo_light);
-        }
-        if (mCollapseDrawable == null) {
-            mCollapseDrawable = getDrawable(getContext(), R.drawable.ic_collapse_small_holo_light);
-        }
-
         typedArray.recycle();
 
         // enforces vertical orientation
@@ -280,8 +264,23 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         mTv = (TextView) findViewById(R.id.expandable_text);
         mTv.setOnClickListener(this);
         mLayout = (RelativeLayout) findViewById(R.id.expand_collapse);
-//        mLayout.setImageDrawable(mCollapsed ? mExpandDrawable : mCollapseDrawable);
         mLayout.setOnClickListener(this);
+    }
+
+    public void setMoreLayoutVisible() {
+        mLayout.setVisibility(View.VISIBLE);
+    }
+
+    public void setMoreLayoutGone() {
+        mLayout.setVisibility(View.GONE);
+    }
+
+    public void setMoreLayoutInVisible() {
+        mLayout.setVisibility(View.INVISIBLE);
+    }
+
+    public boolean isShowingMoreLayout() {
+        return mLayout.isShown();
     }
 
     private static boolean isPostHoneycomb() {
